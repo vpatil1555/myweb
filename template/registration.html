@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>register</title>
+  <style type="text/css">
+div{
+  border: 1px solid gray;
+  max-width: fit-content;
+  margin: auto;
+  height: 80vh;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+    div.form{
+       background: linear-gradient(45deg, dodgerblue, white, purple);
+       width: 12cm;
+       padding: 10px 20px;
+       border-radius: 10px;
+    }
+
+    label{
+      width: 140px;
+      display: inline-block;
+      margin: 0.2px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    input{
+      padding: 4px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #f9f9f9;
+      width: 7cm;
+    }
+
+    input#submit{
+      margin-top: 7px;
+      color: white;
+      font-weight: bold;
+      padding: 4px;
+      background-color: dodgerblue;
+    }
+
+    input#submit:hover{
+      background-color: aqua;
+      color: black;
+    }
+    h2{
+      text-align: center;
+      text-decoration: dotted;
+      color: blanchedalmond;
+      font-size: 24px;
+    }
+    div.message{
+      text-align: center;
+      color: darkslategray;
+    }
+  </style>
+</head>
+<body>
+    <div class="form">
+       <h2>Registration form</h2>
+       <form action="reg" method="post">
+        {% csrf_token %}
+        <h4>Register Here</h4>
+        <p>Please fill in the details to create an account with us.</p>
+        <label for="firstname"><b>First Name</b></label>
+        <input type="text" placeholder="first name" name="first_name" required><br>
+        <label for="lastname"><b>Last Name</b></label>
+        <input type="text" placeholder="last name" name="last_name" required><br>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="username" name="username" required><br>
+        <label for="email"><b>Enter Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required><br>
+        <label for="pwd"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password1" required><br>
+        <label for="confirm"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="password2" required><br>
+        <center>
+          <input type="submit" value="Register" id="submit">
+        </center>
+      </form>
+      <center><p>Already have an account? <a href="Login">Sign in</a>.</p></center>
+      
+        <center>{% for Message in messages %}
+        <h3> {{Message}} </h3>
+        {% endfor %}</center>
+      
+    </div>
+  
+</body>
+</html>
