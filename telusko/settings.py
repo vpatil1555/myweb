@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'Contact'
+    'Contact',
+    'Subscriber',
+    'Adminpanel'
 ]
 
 MIDDLEWARE = [
@@ -80,18 +82,18 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 
 # enter pgadmin 4 database details
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-    
     #'default': {
-        #'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'telusko',
-        #'USER' : 'postgres',
-        #'PASSWORD' : 'Vinod@007',
-        #'HOST' : 'localhost'
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
     #}
+    
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'telusko',
+        'USER' : 'postgres',
+        'PASSWORD' : 'Vinod@007',
+        'HOST' : 'localhost'
+    }
 }
 
 

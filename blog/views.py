@@ -1,16 +1,10 @@
 from django.shortcuts import render
-from .models import design  #import the class from models
+  #import the class from models
 from Contact.models import enquiry
 
 # Create your views here.
 
 # create a function to request from http
-def index(request):
-    
-    types = design.objects.all()
-    
-    
-    return render(request, "index.html",  {'types': types})
 
 
 def callback(request):
@@ -25,6 +19,8 @@ def callback(request):
         print("this is post")
         
     return render(request, 'callback.html')
+
+
    
 
 def index(request):

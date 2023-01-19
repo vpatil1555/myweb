@@ -20,7 +20,7 @@ def Login(request):
         
         if User is not None:
             auth.login(request, User)
-            return redirect('home')
+            return redirect('/')
         else:
             messages.info(request,'invalid details')
             return redirect('login')
@@ -56,7 +56,7 @@ def reg(request):
                 server.starttls()
 
 
-                server.login('vpatil15550@gmail.com', 'yabaimyxrqokjdta')
+                server.login('vpatil15550@gmail.com', 'dnmhamqraaasucqj')
     
                 server.sendmail('vpatil15550@gmail.com', email, 'Registration successful. \n thank you for registering here enjoy our services.')
                 messages.success(request,'user created')
@@ -71,6 +71,6 @@ def reg(request):
 
 def Logout(request):
     auth.logout(request)
-    return redirect('home')
+    return redirect('/')
      
      

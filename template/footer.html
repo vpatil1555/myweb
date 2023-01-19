@@ -1,0 +1,154 @@
+<!-- footer -->
+{% load static %}
+<footer>
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="full footer_top">
+                <div class="container">
+                   <div class="row">
+                      <div class="col-sm-3">
+                         <div class="full f_logo">
+                            <img src="{% static 'images/footer_img.png' %}" alt="#" />
+                         </div>
+                         <div class="full">
+                            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna strud exercitation</p>
+                         </div>
+                      </div>
+                      <div class="col-sm-3">
+                         <div class="full heading_footer">
+                            <h3>Menu</h3>
+                         </div>
+                         <div class="full">
+                            <ul class="footer_link">
+                               <li><a href="/">01. Home</a></li>
+                               <li><a href="/about">02. About</i></a></li>
+                               <li><a href="/what_we_do">03. Services</a></li>
+                               <li><a href="/what_we_do">03. What we do</a></li>
+                               <li><a href="/testimonial">04. Testimonial</a></li>
+                               <li><a href="/callback">05. Contact Us</a></li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="col-sm-3">
+                         <div class="full heading_footer">
+                            <h3>Instagram</h3>
+                         </div>
+                         <div class="full">
+                            <ul class="footer_link_intas">
+                               <li>
+                                  <span><img src="{% static 'images/f_in_blog.png' %}" alt="#" /></span>
+                                  <span>Consectetur Adipiscing</span>
+                               </li>
+                               <li>
+                                  <span><img src="{% static 'images/f_in_blog2.png' %}" alt="#" /></span>
+                                  <span>Consectetur Adipiscing</span>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12">
+                         <div class="row margin_top_50">
+                            <div class="col-md-10 offset-md-1">
+                               <div class="row">
+                                  <div class="col-sm-4">
+                                     <div class="full cont_info">
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="Acharya Dr. S Acharya P.O, Acharya Dr Sarvepalli Radhakrishnan Rd, Soladevanahalli, Karnataka 560107"><span>Location</span></a>
+                                     </div>
+                                  </div>
+                                  <div class="col-sm-4">
+                                     <div class="full cont_info">
+                                        <i class="fa fa-phone"></i>
+                                        <a href="tel:6360435058"><span> Call Us Now</span></a>
+                                     </div>
+                                  </div>
+                                  <div class="col-sm-4">
+                                     <div class="full cont_info">
+                                        <i class="fa fa-envelope" style="font-size: 17px;"></i>
+                                        <a href="mailto:vpatil15550@gmail.com"><span>Send an Email</span></a>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
+ <!-- end footer -->
+ 
+ <div class="col-md-8 offset-md-2" >
+    <div class="full text_align_center" style="background-color: aqua;">
+       
+       <p>Subscribe for more updates</p>
+    </div>
+    <div class="full" style="background-color: aqua;">
+        <form action="newsletter" method="post">
+          {% csrf_token %}
+           <fieldset>
+              <div class="row">
+                <div class="col-md-10 offset-md-1">
+                   <div class="full field">
+                       <input type="text" name="yourname" placeholder="Your Name" />
+                   </div>
+                   
+                   <div class="full field">
+                       <input type="email" name="subscriber" placeholder="Email" />
+                   </div>
+                   
+                   <div class="full field center">
+                      <button type="submit">Subscribe</button>
+                   </div>
+                </div>
+              </div>
+           </fieldset>
+        </form>
+    </div>
+    <!-- cpy -->
+ <!-- <div class="cpy">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12"> -->
+             <div class="full center" style="background-color: aqua;">
+                <ul class="social_icon">
+                   <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                   <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                   <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                   <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                </ul>
+             </div>
+             <div class="full text_align_center" style="background-color: aqua;">
+                <p>© 2020 All Rights Reserved. <a href="{% static 'https://html.design' %}">html.design</a></p>
+             </div>
+          <!-- </div>
+       </div>
+    </div>
+ </div> -->
+ <!-- end cpy -->
+ </div>
+ 
+ 
+ <!-- jQuery (necessary for Bootstrap's JavaScript) -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+ <script src="{% static 'js/popper.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap.min.js' %}"></script>
+ <!-- javascript -->
+ <script src="{% static 'js/owl.carousel.js' %}"></script>
+ <!-- wow animation -->
+ <script src="{% static 'js/wow.js' %}"></script>
+ <!-- menumaker -->
+ <script src="{% static 'js/menumaker.js' %}"></script>
+ <!-- custom js -->
+ <script src="{% static 'js/custom.js' %}"></script>
+ </body>
+ </html>  
+ 

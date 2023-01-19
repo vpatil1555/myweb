@@ -13,4 +13,4 @@ urlpatterns = [
     path("what_we_do",views.what_we_do,name="what_we_do"),
     path("testimonial",views.testimonial,name="testimonial"),
     
-]
+] 
