@@ -27,9 +27,10 @@ from Adminpanel import views as al
 urlpatterns = [
     path("", include('blog.urls')),
     path("Adminpanel/admin_login",include('Adminpanel.urls')),
+    path("admin_logout",al.admin_logout,name="admin_logout"),
     path("Adminpanel/dashboard",al.dashboard,name="dashboard"),
+    path("user",al.user,name="user"),
     path('dj-admin/', admin.site.urls),
-    
     path("blog/",include('blog.urls')),
     path("accounts/",include('accounts.urls')),
     path("accounts/Login",views.Login,name="login"),

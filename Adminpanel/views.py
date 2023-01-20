@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login
 # Create your views here.
 
@@ -34,3 +34,12 @@ def admin_login(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+
+def admin_logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+
+def user(request):
+    return render(request, 'user.html')
