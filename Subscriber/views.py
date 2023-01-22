@@ -18,6 +18,6 @@ def newsletter(request):
     server.login('vpatil15550@gmail.com', 'dnmhamqraaasucqj')
     
     server.sendmail('vpatil15550@gmail.com', subscriber_email, f'Hi, {subscriber_name}\n \n \n \n \n \n Thank you for subscribing from now on get our latest updates and news on the go\n \n \n \n \n \n  Thank You.')
-    print("you have subscribed thank you")
+    print(f'{subscriber_name }you have subscribed thank you')
     
     return render(request, 'index.html')  
