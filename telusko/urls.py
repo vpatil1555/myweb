@@ -36,6 +36,7 @@ urlpatterns = [
     path("accounts/Login",views.Login,name="login"),
     path("accounts/Logout",views.Logout,name="logout"),
     path("accounts/reg",views.reg,name="reg"),
+    path("accounts/verify_otp",views.verify_otp,name="verify_otp"),
     path("contact",view.contact,name="contact"),
     path("newsletter",ss.newsletter,name="newsletter")
     ]

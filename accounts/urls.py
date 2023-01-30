@@ -8,5 +8,6 @@ urlpatterns = [
     
     path("reg",views.reg,name="reg"),
     path("login",views.Login,name='login'),
-    path("logout",views.Logout,name="logout")
+    path("logout",views.Logout,name="logout"),
+    path("verify_otp",views.verify_otp,name="verify_otp"),
 ]
