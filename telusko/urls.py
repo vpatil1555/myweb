@@ -38,6 +38,7 @@ urlpatterns = [
     path("accounts/reg",views.reg,name="reg"),
     path("accounts/verify_otp",views.verify_otp,name="verify_otp"),
     path("contact",view.contact,name="contact"),
+    #path("showdata",view.showdata,name="showdata"),
     path("newsletter",ss.newsletter,name="newsletter")
     ]
 

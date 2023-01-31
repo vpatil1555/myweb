@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -223,7 +224,7 @@ table td{
         <!-- <img src="./pic/img.jpg" alt="">-->
         <ul>
         {% if user.is_authenticated %}
-        <li>hello, {{user.username }}</li>
+        <li>hello, {{user.username}}</li>
         {% endif %}
       </ul>
       </div>
@@ -273,52 +274,17 @@ table td{
                 <th>Email</th>
               </tr>
             </thead>
+            {% for user in users %}
             <tbody>
               <tr>
-                <td>1</td>
-                <td>2, Aug, 2022</td>
-                <td>Sam Tonny</td>
-                <td>Premimum</td>
-                <td>$2000.00</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>29, July, 2022</td>
-                
-                <td>Code Info</td>
-                <td>Silver</td>
-                <td>$5,000.00</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>15, July, 2022</td>
-              
-                <td>Jhon David</td>
-                <td>Startup</td>
-                <td>$3000.00</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>5, July, 2022</td>
-                <td>Salina Gomiz</td>
-                <td>Premimum</td>
-                <td>$7000.00</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>29, June, 2022</td>
-                <td>Gomiz</td>
-                <td>Gold</td>
-                <td>$4000.00</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>28, June, 2022</td>
-                <td>Elyana Jhon</td>
-                <td>Premimum</td>
-                <td>$2000.00</td>
+                <td></td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
               </tr>
             </tbody>
+            {% endfor %}
           </table>
         </div>
 
@@ -336,13 +302,13 @@ table td{
                 <th>Message</th>
               </tr>
             </thead>
-            {% for data in data %}
+            {% for dest in dests %}
             <tbody>
               <tr>
-                <td>{{data.name}}</td>
-                <td>{{data.email}}</td>
-                <td>{{data.Phone}}</td>
-                <td>{{data.message}}</td>
+                <td>{{dest.name}}</td>
+                <td>{{dest.phone}}</td>
+                <td>{{dest.email}}</td>
+                <td>{{dest.message}}</td>
               </tr>
             </tbody>
             {% endfor %}

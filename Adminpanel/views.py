@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login
+from Contact.models import enquiry
 # Create your views here.
 
 def admin_login(request):
@@ -33,7 +34,9 @@ def admin_login(request):
         
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    
+    dests = enquiry.objects.all()
+    return render(request, 'dashboard.html', {'dests': dests})
 
 
 def admin_logout(request):

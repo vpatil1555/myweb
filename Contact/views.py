@@ -16,8 +16,6 @@ def contact(request):
         
     return render(request, 'index.html')
 
-def showdata(request):
-    data = enquiry.objects.all()
-    return render(request, "dashboard.html", {'data': data})
+
 
     
