@@ -21,15 +21,18 @@ from django.conf.urls.static import static
 from accounts import views
 from Contact import views as view
 from Subscriber import views as ss
-from Adminpanel import views as al
+from Adminpanel import views as ap
 
 
 urlpatterns = [
     path("", include('blog.urls')),
     path("Adminpanel/admin_login",include('Adminpanel.urls')),
-    path("admin_logout",al.admin_logout,name="admin_logout"),
-    path("Adminpanel/dashboard",al.dashboard,name="dashboard"),
-    path("user",al.user,name="user"),
+    path("admin_logout",ap.admin_logout,name="admin_logout"),
+    path("Adminpanel/dashboard",ap.dashboard,name="dashboard"),
+    path("user",ap.user,name="user"),
+    path("dashboard",ap.dashboard,name="dashboard"),
+    path("Enquirys",ap.Enquirys,name="Enquirys"),
+    path("Subscribers",ap.Subscribers,name="Subscribers"),
     path('dj-admin/', admin.site.urls),
     path("blog/",include('blog.urls')),
     path("accounts/",include('accounts.urls')),
@@ -38,7 +41,6 @@ urlpatterns = [
     path("accounts/reg",views.reg,name="reg"),
     path("accounts/verify_otp",views.verify_otp,name="verify_otp"),
     path("contact",view.contact,name="contact"),
-    #path("showdata",view.showdata,name="showdata"),
     path("newsletter",ss.newsletter,name="newsletter")
     ]
 

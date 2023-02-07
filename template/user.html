@@ -1,13 +1,12 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <style type="text/css">
 
-<style type="text/css">
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    /*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 *{
   margin: 0;
   padding: 0;
@@ -205,217 +204,99 @@ table td{
 }
 
   </style>
-
-    <title>user</title>
+  <title>Admin Dashboard </title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-          <a href="#">Evonyee</a>
-          <div class="search_box">
-            <input type="text" placeholder="Search Evonyee">
-            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-          </div>
-        </div>
-    
-        <div class="header-icons">
-          <div class="account">
-            <!-- <img src="./pic/img.jpg" alt="">-->
-            <ul>
-            {% if user.is_authenticated %}
-            <li>hello, {{user.username }}</li>
-            {% endif %}
-          </ul>
-          </div>
-        </div>
-      </header>
-
-      <nav>
-        <div class="side_navbar">
-          <span>Main Menu</span>
-          <a href="#" class="active">Dashboard</a>
-          <a href="/user">user</a>
-          <a href="#">Enquirys</a>
-          <a href="#">Subscribers</a>
-          <a href="#">Testimonial</a>
-          <a href="#">Designs</a>
-  
-          <div class="links">
-            <span>Quick Link</span>
-            <a href="#">Paypal</a>
-            <a href="#">EasyPay</a>
-            <a href="/admin_logout">Logout<i class='fa fa-sign-out'></i></a>
-          </div>
-        </div>
-      </nav>  
-
-    <div class="content">
-        <!-- Content -->
-        <div id="content" class="">
-          
-          <h1>Select user to change</h1>
-          
-          
-    <div id="content-main">
-    
-        <ul class="object-tools">
-          
-            
-    
-    
-    
-    <li>
-    
-    <a href="/dj-admin/auth/user/add/" class="addlink">
-      Add user
-    </a>
-    </li>
-    
-    
-    
-          
-        </ul>
-    
-    
-    <div class="module filtered" id="changelist">
-      <div class="changelist-form-container">
-        
-    
-    <div id="toolbar"><form id="changelist-search" method="get">
-    <div><!-- DIV needed for valid HTML -->
-    <label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search"></label>
-    <input type="text" size="40" name="q" value="" id="searchbar" autofocus="">
-    <input type="submit" value="Search">
-    
-    
-    </div>
-    
-    </form></div>
-    
-    
-        
-    
-        <form id="changelist-form" method="post" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="5sapaSRwK005fstkZSjHWniYuB7PnRDPrkJXdDf5U87yPj99OTOJeKl0JIqookSn">
-        
-    
-        
-          
-    <div class="actions">
-    
-    
-    <label>Action: <select name="action" required="">
-    <option value="" selected="">---------</option>
-    
-    <option value="delete_selected">Delete selected users</option>
-    
-    </select></label><input type="hidden" name="select_across" value="0" class="select-across">
-    
-    
-    <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
-    
-    
-    
-        <span class="action-counter" data-actions-icnt="3">0 of 3 selected</span>
-        
-    
-    
-    
-    </div>
-    
-          
-    
-    
-    <div class="results">
-    <table id="result_list">
-    <thead>
-    <tr>
-    
-    <th scope="col" class="action-checkbox-column">
-    
-    <div class="text"><span><input type="checkbox" id="action-toggle"></span></div>
-    <div class="clear"></div>
-    </th>
-    <th scope="col" class="sortable column-username sorted ascending">
-    
-     
-       <div class="sortoptions">
-         <a class="sortremove" href="?o=" title="Remove from sorting"></a>
-         
-         <a href="?o=-1" class="toggle ascending" title="Toggle sorting"></a>
-       </div>
-     
-    
-    <div class="text"><a href="?o=-1">Username</a></div>
-    <div class="clear"></div>
-    </th>
-    <th scope="col" class="sortable column-email">
-    
-     
-    
-    <div class="text"><a href="?o=2.1">Email address</a></div>
-    <div class="clear"></div>
-    </th>
-    <th scope="col" class="sortable column-first_name">
-    
-     
-    
-    <div class="text"><a href="?o=3.1">First name</a></div>
-    <div class="clear"></div>
-    </th>
-    <th scope="col" class="sortable column-last_name">
-    
-     
-    
-    <div class="text"><a href="?o=4.1">Last name</a></div>
-    <div class="clear"></div>
-    </th>
-    <th scope="col" class="sortable column-is_staff">
-    
-     
-    
-    <div class="text"><a href="?o=5.1">Staff status</a></div>
-    <div class="clear"></div>
-    </th>
-    </tr>
-    </thead>
-    <tbody>
-    
-    
-    <tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="12" class="action-select"></td><th class="field-username"><a href="/dj-admin/auth/user/12/change/">admin</a></th><td class="field-email">vpatil15@gmail.com</td><td class="field-first_name">Vinod</td><td class="field-last_name">patil</td><td class="field-is_staff"><img src="/static/admin/img/icon-yes.svg" alt="True"></td></tr>
-    
-    
-    <tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select"></td><th class="field-username"><a href="/dj-admin/auth/user/1/change/">vinod</a></th><td class="field-email">vpatil15550@gmail.com</td><td class="field-first_name"></td><td class="field-last_name"></td><td class="field-is_staff"><img src="/static/admin/img/icon-yes.svg" alt="True"></td></tr>
-    
-    
-    <tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="29" class="action-select"></td><th class="field-username"><a href="/dj-admin/auth/user/29/change/">vinodpatil</a></th><td class="field-email">vbpatil15550@gmail.com</td><td class="field-first_name">Vinod</td><td class="field-last_name">patil</td><td class="field-is_staff"><img src="/static/admin/img/icon-no.svg" alt="False"></td></tr>
-    
-    </tbody>
-    </table>
-    </div>
-    
-    
-          
-        
-        
-    
-    <p class="paginator">
-    
-    3 users
-    
-    
-    </p>
-    
-        </form>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Evonyee</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search Evonyee">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
       </div>
-      
-        
-          
-    
-          
-          <br class="clear">
-        </div>
-        <!-- END Content -->
-        <div id="footer"></div>
+    </div>
+
+    <div class="header-icons">
+      <div class="account">
+        <!-- <img src="./pic/img.jpg" alt="">-->
+        <ul>
+        {% if user.is_authenticated %}
+        <li>hello, {{user.username}}</li>
+        {% endif %}
+      </ul>
       </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="/dashboard" class="active">Dashboard</a>
+        <a href="/user">user</a>
+        <a href="/Enquirys">Enquirys</a>
+        <a href="/Subscribers">Subscribers</a>
+        <a href="/Testimonial">Testimonial</a>
+        <a href="/Designs">Designs</a>
+
+        <div class="links">
+          <span>Quick Link</span>
+          <a href="#">Paypal</a>
+          <a href="#">EasyPay</a>
+          <a href="/admin_logout">Logout<i class='fa fa-sign-out'></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <h2>users</h2>
+      <div class="promo_card">
+        <h1>Welcome to Evonyee</h1>
+        <span>Lorem ipsum dolor sit amet.</span>
+        <button type="menu">Learn More</button>
+      </div>
+
+      <div class="history_lists">
+        
+
+        <div class="list2">
+          <div class="row">
+            <h4>users</h4>
+            <a href="#">Upload</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>username</th>
+                <th>Email</th>
+                <td><input type="checkbox" id="action-toggle"></td>
+              </tr>
+            </thead>
+            {% for enquiry in enquirys %}
+            <tbody>
+              <tr>
+                <td>{{enquiry.id}}</td>
+                <td>{{enquiry.name}}</td>
+                <td>{{enquiry.phone}}</td>
+                <td>{{enquiry.email}}</td>
+                <td>{{enquiry.message}}</td>
+                <td><input type="checkbox" id="action-toggle"></td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+  </div>
 </body>
 </html>

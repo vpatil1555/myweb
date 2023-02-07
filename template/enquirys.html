@@ -204,7 +204,7 @@ table td{
 }
 
   </style>
-  <title>Admin Dashboard </title>
+  <title>Admin Dashboard | By Code Info</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
@@ -251,7 +251,7 @@ table td{
     </nav>
 
     <div class="main-body">
-      <h2>Dashboard</h2>
+      <h2>Enquirys</h2>
       <div class="promo_card">
         <h1>Welcome to Evonyee</h1>
         <span>Lorem ipsum dolor sit amet.</span>
@@ -269,51 +269,28 @@ table td{
           <table>
             <thead>
               <tr>
-                <th><input type="checkbox" id="action-toggle"></th>
+                <th>id</th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Message</th>
               </tr>
             </thead>
-            {% for dest in dests %}
+            {% for enquiry in enquirys %}
             <tbody>
               <tr>
-                <td><input type="checkbox" id="action-toggle"></td>
-                <td>{{dest.name}}</td>
-                <td>{{dest.phone}}</td>
-                <td>{{dest.email}}</td>
-                <td>{{dest.message}}</td>
+                <td>{{enquiry.id}}</td>
+                <td>{{enquiry.name}}</td>
+                <td>{{enquiry.phone}}</td>
+                <td>{{enquiry.email}}</td>
+                <td>{{enquiry.message}}</td>
               </tr>
             </tbody>
             {% endfor %}
           </table>
         </div>
 
-        <div class="list1">
-          <div class="row">
-            <h4>Subscribers</h4>
-            <a href="#">See all</a>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            {% for user in users %}
-            <tbody>
-              <tr>
-                <td>{{user.id}}</td>
-                <td>{{user.NAME}}</td>
-                <td>{{user.EMAIL}}</td>
-              </tr>
-            </tbody>
-            {% endfor %}
-          </table>
-        </div>
+        
       </div>
     </div>
 

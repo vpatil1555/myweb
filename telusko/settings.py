@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'accounts',
     'Contact',
     'Subscriber',
-    'Adminpanel'
+    'Adminpanel',
+    'Designs'
 ]
 
 MIDDLEWARE = [

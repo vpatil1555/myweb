@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login
 from Contact.models import enquiry
+from Subscriber.models import subscriber
 # Create your views here.
 
 def admin_login(request):
@@ -34,9 +35,9 @@ def admin_login(request):
         
 
 def dashboard(request):
-    
+    users = subscriber.objects.all()
     dests = enquiry.objects.all()
-    return render(request, 'dashboard.html', {'dests': dests})
+    return render(request, 'dashboard.html', {'users': users, 'dests': dests})
 
 
 def admin_logout(request):
@@ -46,3 +47,13 @@ def admin_logout(request):
 
 def user(request):
     return render(request, 'user.html')
+
+def Enquirys(request):
+    
+    enquirys = enquiry.objects.all()
+    return render(request, 'enquirys.html', {'enquirys': enquirys})
+
+def Subscribers(request):
+    
+    subscribers = subscriber.objects.all()
+    return render(request, 'subscribers.html', {'subscribers': subscribers})

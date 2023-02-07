@@ -251,7 +251,7 @@ table td{
     </nav>
 
     <div class="main-body">
-      <h2>Dashboard</h2>
+      <h2>Subscribers</h2>
       <div class="promo_card">
         <h1>Welcome to Evonyee</h1>
         <span>Lorem ipsum dolor sit amet.</span>
@@ -261,34 +261,7 @@ table td{
       <div class="history_lists">
         
 
-        <div class="list2">
-          <div class="row">
-            <h4>Enquirys</h4>
-            <a href="#">Upload</a>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th><input type="checkbox" id="action-toggle"></th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Message</th>
-              </tr>
-            </thead>
-            {% for dest in dests %}
-            <tbody>
-              <tr>
-                <td><input type="checkbox" id="action-toggle"></td>
-                <td>{{dest.name}}</td>
-                <td>{{dest.phone}}</td>
-                <td>{{dest.email}}</td>
-                <td>{{dest.message}}</td>
-              </tr>
-            </tbody>
-            {% endfor %}
-          </table>
-        </div>
+       
 
         <div class="list1">
           <div class="row">
@@ -303,12 +276,12 @@ table td{
                 <th>Email</th>
               </tr>
             </thead>
-            {% for user in users %}
+            {% for subscriber in subscribers %}
             <tbody>
               <tr>
-                <td>{{user.id}}</td>
-                <td>{{user.NAME}}</td>
-                <td>{{user.EMAIL}}</td>
+                <td>{{subscriber.id}}</td>
+                <td>{{subscriber.NAME}}</td>
+                <td>{{subscriber.EMAIL}}</td>
               </tr>
             </tbody>
             {% endfor %}
